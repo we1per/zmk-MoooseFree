@@ -175,7 +175,7 @@
 &kp LSHIFT      &kp Z         &kp X                  &kp C                 &kp V         &kp B         &kp C_MUTE    &kp DOWN
 &kp LCTRL       &kp LWIN      &kp LALT               &lt_to_layer_0 4 TAB  &kp DEL       &kp ESC       &kp UP
 &kp BSPC        &kp SPACE     &lt_to_layer_0 2 INT4  &kp PSCRN             &none
-&bootloader     &bt BT_CLR    &kp X                  &kp D                 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_CLR
+&bootloader     &bt BT_CLR    &kp Z                  &kp D                 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_CLR
 &kp UP          &kp Y         &kp U                  &kp I                 &kp O         &kp P         &kp INT3
 &kp DOWN        &kp H         &kp J                  &kp K                 &kp L         &kp SEMI      &kp SQT
 &kp RIGHT       &kp PSCRN     &kp N                  &kp M                 &kp COMMA     &kp DOT       &kp SLASH     &kp RSHIFT

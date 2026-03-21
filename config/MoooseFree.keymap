@@ -78,59 +78,31 @@
         my_sp: my_sp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp INT5>, <&macro_tap>, <&kp LS(N3)>;
+            bindings = <&kp INT5 &kp LS(N3)>;
         };
 
         my_dq: my_dq {
             #binding-cells = <0>;
             compatible = "zmk,behavior-macro";
-            bindings =
-                <&macro_tap>,
-                <&kp INT5>,
-                <&macro_tap>,
-                <&kp LS(N2)>,
-                <&macro_tap>,
-                <&kp LS(N2)>;
+            bindings = <&kp INT5 &kp LS(N2) &kp LS(N2)>;
         };
 
         my_sq: my_sq {
             #binding-cells = <0>;
             compatible = "zmk,behavior-macro";
-            bindings =
-                <&macro_tap>,
-                <&kp INT5>,
-                <&macro_tap>,
-                <&kp LS(N7)>,
-                <&macro_tap>,
-                <&kp LS(N7)>;
+            bindings = <&kp INT5 &kp LS(N7) &kp LS(N7)>;
         };
 
         my_kakko: my_kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp INT5>,
-                <&macro_tap>,
-                <&kp LS(N8)>,
-                <&macro_tap>,
-                <&kp LS(N9)>;
+            bindings = <&kp LS(N8) &kp LS(N9)>;
         };
 
         my_br: my_br {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp INT5>,
-                <&macro_tap>,
-                <&kp LS(COMMA)>,
-                <&macro_tap>,
-                <&kp B>,
-                <&macro_tap>,
-                <&kp R>,
-                <&macro_tap>,
-                <&kp LS(DOT)>;
+            bindings = <&kp INT5 &kp LS(COMMA) &kp B &kp R &kp LS(DOT)>;
         };
 
         shift_space: shift_space {
@@ -138,6 +110,13 @@
             #binding-cells = <0>;
             bindings = <&kp INTERNATIONAL_5 &kp LS(SPACE)>;
             label = "SHIFT_SPACE";
+        };
+
+        my_kagi: my_kagi {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp NUHS>;
+            label = "MY_KAGI";
         };
     };
 
@@ -195,6 +174,20 @@
             layers = <0>;
             timeout-ms = <80>;
         };
+
+        KAKKO {
+            bindings = <&my_kakko>;
+            key-positions = <12 50>;
+            timeout-ms = <80>;
+            layers = <0>;
+        };
+
+        KAGIKAKKO {
+            bindings = <&my_kagi>;
+            key-positions = <5 43>;
+            layers = <0>;
+            timeout-ms = <80>;
+        };
     };
 
     keymap {
@@ -205,7 +198,7 @@
 &kp ESCAPE       &kp Q             &kp W                 &kp E                 &kp R         &kp T         &kp RIGHT
 &kp LALT         &kp A             &kp S                 &kp D                 &kp F         &kp G         &kp LEFT
 &kp LSHIFT       &kp Z             &kp X                 &kp C                 &kp V         &kp B         &kp C_MUTE    &kp DOWN
-&kp LCTRL        &lt 4 ESC         &kp LWIN              &kp LS(F10)           &kp DEL       &kp ESC       &kp UP
+&kp LCTRL        &lt 4 ESC         &kp LWIN              &kp LS(F10)           &mkp MB4      &mkp MB5      &kp UP
 &mt LCTRL GRAVE  &mt LSHIFT SPACE  &mt LC(LSHIFT) MINUS  &kp PSCRN             &none
 &bootloader      &kp D             &kp C                 &kp D                 &bt BT_SEL 4  &bt BT_SEL 5  &bt BT_SEL 6  &bt BT_CLR
 &kp UP           &kp Y             &kp U                 &kp I                 &kp O         &kp P         &kp INT3

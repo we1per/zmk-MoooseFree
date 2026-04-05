@@ -19,7 +19,7 @@ MoooseFree: ZMK firmware for a split keyboard with rotary encoders and PMW3610 t
 
 When the user says "前回の続き" or similar:
 
-1. Read `@context/current.md`
+1. Read `.claude/context/current.md`
 2. Summarize: objective, last decision, next action
 3. Confirm with the user before resuming work
 
@@ -27,6 +27,6 @@ When the user says "前回の続き" or similar:
 
 Before ending a session:
 
-1. Update `@context/current.md` with current state
-2. If `current.md` exceeds ~80 lines, move older details to `context/archive/YYYY-MM-DD.md`
+1. Update `.claude/context/current.md` with current state
+2. If `current.md` exceeds ~80 lines, move older details to `.claude/context/archive/YYYY-MM-DD.md`
 3. Keep `current.md` focused on actionable state only

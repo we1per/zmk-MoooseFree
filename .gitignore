@@ -1,1 +1,6 @@
-/.claude/
+.claude/*
+!.claude/CLAUDE.md
+!.claude/skills/
+!.claude/skills/**
+!.claude/settings.json
+.claude/settings.local.json

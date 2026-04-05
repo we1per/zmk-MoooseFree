@@ -2,6 +2,7 @@
 
 &left_encoder {
     status = "okay";
+    compatible = "custom,ec11-throttled";
 };
 
 &right_encoder {

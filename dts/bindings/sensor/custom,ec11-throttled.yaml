@@ -1,0 +1,24 @@
+description: |
+  Rate-limited sensor driver for the Alps EC11 rotary encoder.
+  Fork of alps,ec11 with configurable minimum trigger interval.
+
+compatible: "custom,ec11-throttled"
+
+properties:
+  a-gpios:
+    type: phandle-array
+    required: true
+    description: A pin for the encoder
+  b-gpios:
+    type: phandle-array
+    required: true
+    description: B pin for the encoder
+  resolution:
+    type: int
+    description: Number of pulses per tick
+    deprecated: true
+    required: false
+  steps:
+    type: int
+    description: Number of pulses in one full rotation
+    required: false

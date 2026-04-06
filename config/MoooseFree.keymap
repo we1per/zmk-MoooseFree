@@ -137,7 +137,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&kp>, <&kp>;
 
-            tap-ms = <5>;
+            tap-ms = <20>;
         };
 
         rot_mkp: sensor_rotate_mkp {
@@ -145,7 +145,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&mkp>, <&mkp>;
 
-            tap-ms = <5>;
+            tap-ms = <20>;
         };
 
         mouse_scroll: mouse_wheel_scrl {
@@ -153,7 +153,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
-            tap-ms = <5>;
+            tap-ms = <20>;
         };
 
         mouse_scroll2: mouse_wheel_scrl2 {
@@ -161,7 +161,7 @@
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
 
-            tap-ms = <5>;
+            tap-ms = <16>;
         };
     };
 

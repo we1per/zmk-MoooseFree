@@ -68,6 +68,18 @@ static void ec11_thread_cb(const struct device *dev) {
     int64_t now = k_uptime_get();
     int64_t elapsed = now - drv_data->last_trigger_time;
 
+    /*
+     * Always update AB state and accumulate pulses, even when
+     * rate-limiting skips the handler. Without this, skipped
+     * intermediate states cause quadrature decoding errors
+     * (lost pulses, phantom reverse direction).
+     *
+     * When handler IS called, ZMK calls sample_fetch again,
+     * but since AB state is already current, delta=0 and
+     * the accumulated pulses are preserved for channel_get.
+     */
+    sensor_sample_fetch(dev);
+
     if (elapsed < CONFIG_EC11_THROTTLED_MIN_INTERVAL_MS) {
         setup_int(dev, true);
         return;

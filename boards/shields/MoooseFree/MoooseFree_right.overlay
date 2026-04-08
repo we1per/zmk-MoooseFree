@@ -10,6 +10,7 @@
 
 &right_encoder {
     status = "okay";
+    compatible = "custom,ec11-throttled";
 };
 
 &left_encoder {

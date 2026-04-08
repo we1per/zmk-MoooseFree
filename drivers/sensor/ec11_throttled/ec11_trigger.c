@@ -85,6 +85,21 @@ static void ec11_thread_cb(const struct device *dev) {
         return;
     }
 
+    /*
+     * Cap accumulated pulses to ±1 before invoking the handler.
+     * ZMK's sensor processing converts pulses into N behavior
+     * invocations (N = rotation_degrees * steps / FULL_ROTATION).
+     * On fast rotation, a single handler call could enqueue many
+     * PRESS+RELEASE pairs into the behavior queue, overflowing it
+     * and causing RELEASE entries to be dropped (sticky scroll).
+     * Capping to ±1 limits emission to one trigger per handler call.
+     */
+    if (drv_data->pulses > 1) {
+        drv_data->pulses = 1;
+    } else if (drv_data->pulses < -1) {
+        drv_data->pulses = -1;
+    }
+
     drv_data->last_trigger_time = now;
     drv_data->handler(dev, drv_data->trigger);
 
